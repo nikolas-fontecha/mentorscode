@@ -3,6 +3,9 @@ import morgan   from 'morgan';
 import mongoose from 'mongoose';
 import cors     from 'cors';
 
+//rutas
+import rutasUsuarios from './rutes/usuario';
+
 const app = express();
 
 //Inicio conexión  a la base de datos
@@ -30,8 +33,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//Iniciar servidor
+app.use('/mentorscode/user', rutasUsuarios);
 
+//Iniciar servidor
 app.set('puerto', process.env.PORT || 3000);
 
 app.listen(app.get('puerto'), () => {
