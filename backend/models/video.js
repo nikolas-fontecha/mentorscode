@@ -16,7 +16,7 @@ const videoSchema = new Schema({
     categoria:    {type: Array},
     titulo:       {type: String, required: true},
     descripcion:  {type: String},
-    nombreMentor: {type: String}
+    mentor: {type: String}
 });
 
 const video = mongoose.model('video', videoSchema);
