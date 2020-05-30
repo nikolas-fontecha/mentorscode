@@ -7,7 +7,7 @@ var controller = {
         const body = {
             origen:       req.body.origen,
             comentarios:  [],
-            likes:        req.body.like,
+            likes:        [],
             categoria:    req.body.categoria,
             titulo:       req.body.titulo,
             descripcion:  req.body.descripcion,
@@ -46,8 +46,6 @@ var controller = {
 
         if(videoExiste){
 
-            //return res.status(200).json({mensaje: 'hola guapo'});
-
             try{
                 videoExiste.comentarios.push({
                     descripcion:   body.descripcion,
@@ -58,13 +56,44 @@ var controller = {
                 videoExiste.save();
 
                 return res.status(200).json(videoExiste);
-                
+
             }catch(error){
                 return res.status(500).json({
                     mensaje: 'Error en el servidor'
                 });
             }
         }
+    },
+
+    agregarLike: async(req, res) => {
+
+        var idVideo = req.params.id;
+
+        const like = req.body.like;
+
+        const videoExiste = await video.findById({ _id: idVideo });
+
+        if(videoExiste){
+            try{
+                const agregarLike = await videoExiste.likes.push(like);
+
+                if(agregarLike){
+                    videoExiste.save();
+                    return res.status(200).json(videoExiste);
+                }
+            }catch(error){
+                return res.status(500).json({
+                    mensaje: 'Error en el servidor'
+                });
+            }
+            
+
+        }
+
+        return res.status(400).json({
+            mensaje: 'Error el video no existe'
+        });
+
 
     }
 }
