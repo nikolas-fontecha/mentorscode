@@ -129,13 +129,36 @@ var controller = {
                 const comentarios = traerVideo.comentarios;
 
                 return res.status(200).json(comentarios);
-                
+
             }catch(error){
                 return res.status(500).json({
                     mensaje: 'Error en el servidor'
                 });
             }
         }
+    },
+
+    obtenerPorNombre: async(req, res) => {
+        const nombreMentor = req.params.nombre;
+
+        const traerVideo = await video.find({ mentor: nombreMentor });
+
+        if(traerVideo){
+            
+            try{
+
+                return res.status(200).json(traerVideo);
+
+            }catch(error){
+                return res.status(500).json({
+                    mensaje: 'Error en el servidor'
+                });
+            }
+        }
+
+        return res.status(400).json({
+            mensaje: 'No hay videos de ese mentor'
+        });
     }
 }
 

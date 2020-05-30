@@ -8,5 +8,6 @@ router.post('/agregar-comentario/:id', controllerVideo.agregarComentario);
 router.post('/agregar-like/:id', controllerVideo.agregarLike);
 router.get('/obtener-likes/:id', controllerVideo.obtenerLikes);
 router.get('/obtener-comentarios/:id', controllerVideo.obtenerComentarios);
+router.get('/obtener-video/:nombre', controllerVideo.obtenerPorNombre);
 
 module.exports = router;
