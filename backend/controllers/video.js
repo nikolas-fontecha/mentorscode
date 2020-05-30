@@ -6,6 +6,7 @@ var controller = {
 
         const body = {
             origen:       req.body.origen,
+            comentarios:  [],
             likes:        req.body.like,
             categoria:    req.body.categoria,
             titulo:       req.body.titulo,
@@ -44,11 +45,20 @@ var controller = {
         const videoExiste = await video.findById({ _id: idVideo });
 
         if(videoExiste){
+
+            //return res.status(200).json({mensaje: 'hola guapo'});
+
             try{
-                videoExiste.comentarios.push(body)
+                videoExiste.comentarios.push({
+                    descripcion:   body.descripcion,
+                    nombreUsuario: body.nombreUsuario,
+                    idUsuario:     body.idUsuario
+                });
+
                 videoExiste.save();
 
                 return res.status(200).json(videoExiste);
+                
             }catch(error){
                 return res.status(500).json({
                     mensaje: 'Error en el servidor'

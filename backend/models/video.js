@@ -11,7 +11,7 @@ const comentariosSchema = new Schema({
 
 const videoSchema = new Schema({
     origen:       {type: String},
-    comentarios:  comentariosSchema,  
+    comentarios:  [comentariosSchema],  
     likes:        {type: Array},
     categoria:    {type: Array},
     titulo:       {type: String, required: true},
