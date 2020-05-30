@@ -106,7 +106,7 @@ var controller = {
                 const likes = traerVideo.likes;
 
                 return res.status(200).json(likes);
-                
+
             }catch(error){
                 return res.status(500).json({
                     mensaje: 'Error en el servidor'
@@ -114,6 +114,28 @@ var controller = {
             }
         }
 
+        return res.status(400).json({
+            mensaje: 'Error el video no existe'
+        });
+    },
+
+    obtenerComentarios: async(req, res) => {
+        const idVideo = req.params.id;
+
+        const traerVideo = await video.findById({ _id: idVideo });
+
+        if(traerVideo){
+            try{
+                const comentarios = traerVideo.comentarios;
+
+                return res.status(200).json(comentarios);
+                
+            }catch(error){
+                return res.status(500).json({
+                    mensaje: 'Error en el servidor'
+                });
+            }
+        }
     }
 }
 
