@@ -5,6 +5,7 @@ import cors     from 'cors';
 
 //rutas
 import rutasUsuarios from './rutes/usuario';
+import rutasVideos   from './rutes/videos';
 
 const app = express();
 
@@ -34,6 +35,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/mentorscode/user', rutasUsuarios);
+app.use('/mentorscode/video', rutasVideos);
 
 //Iniciar servidor
 app.set('puerto', process.env.PORT || 3000);
