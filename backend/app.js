@@ -9,13 +9,19 @@ import rutasVideos   from './rutes/videos';
 
 const app = express();
 
-//Inicio conexión  a la base de datos
-const uri     = 'mongodb://localhost:27017/mentorscode';
+//Inicio conexión  a la base de datos local
+//const uri     = 'mongodb://localhost:27017/mentorscode';
+
+//inicio conexión a la base de datos en la nube
+const uri     = 'mongodb+srv://paquito_lorito:paquito123@mentorscode-x9mtu.mongodb.net/mentorscode?retryWrites=true&w=majority';
+
 const options = {
     useNewUrlParser:    true,
     useCreateIndex:     true,
     useUnifiedTopology: true
 };
+
+
 
 mongoose.connect(uri, options)
 .then(() => {
