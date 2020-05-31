@@ -7,7 +7,10 @@
     "start": "babel-node app.js --exec",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js",
-    "devbabel": "nodemon app.js --exec babel-node"
+    "devbabel": "nodemon app.js --exec babel-node",
+  "engines": {
+    "node": "12.16.x"
+   }
   },
   "keywords": [],
   "author": "",
