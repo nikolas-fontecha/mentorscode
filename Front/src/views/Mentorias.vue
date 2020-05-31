@@ -7,10 +7,9 @@
 </template>
 
 <script>
-import cabeza from "../components/HeaderIniciado";
+import cabeza from "../components/HeaderLogout";
 import cuerpo from "../components/BodyIniciado";
 import pie from "../components/FooterHome";
-
 export default {
   components: {
     cabeza,
