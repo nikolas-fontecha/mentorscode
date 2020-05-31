@@ -7,7 +7,7 @@ const comentariosSchema = new Schema({
     nombreUsuario: {type: String},
     idUsuario:     {type: String, required: true},
     fecha:         {type: Date, default: Date.now}
-})
+});
 
 const videoSchema = new Schema({
     origen:       {type: String},
