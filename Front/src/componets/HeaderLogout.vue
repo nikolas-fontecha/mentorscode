@@ -18,6 +18,32 @@
                     </li>
                 </ul>
             </nav>
+        </div>
+        <div class="modal-register">
+            <div class="content">
+                <div class="imagen">
+                    <h2>Bienvenido, únete hoy a nuestro grupo de Meetens</h2>
+                    <img src="../assets/home/sesion.svg" />
+                </div>
+                <div class="formulario">
+                    <div class="close" id="close">+</div>
+                    <form>
+                        <div class="input">
+                            <p>Nombre</p>
+                            <input type="text" name="" id="">
+                        </div>
+                        <div class="input">
+                            <p>E-mail</p>
+                            <input type="email" name="" id="">
+                        </div>
+                        <div class="input">
+                            <p>Contraseña</p>
+                            <input type="password" name="" id="">
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
         </div>   
     </div>
 </template>
@@ -27,6 +53,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.content{
+    width:700px;
+    height: 500;
+    display:flex;
+    flex-direction: row;
+}
+
+.imagen{
+    width:50%;
+    height: 100%;
+}
+
+.formulario{
+    width:50%;
+    height: 100%;
+}
 
 .mentoria{
     font-family: 'Open Sans', sans-serif;
