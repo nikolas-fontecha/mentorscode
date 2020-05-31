@@ -62,6 +62,10 @@
                 </ul>
             </div>
         </div>
+        <div class="slogan">
+            <h2>Tu futuro lo creas HOY!</h2>
+            <a class="ya" href="">Empieza Ya!</a>
+        </div>
     </div>
 </template>
 
@@ -189,5 +193,28 @@
     margin: 0 auto;
 }
 
+.slogan h2{
+    width:100%;
+    font-family: 'Lato', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color:#001847;
+    text-align:center;
+    margin-top:60px;
+}
+
+.slogan a{
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    text-decoration: none;
+    color:#ffffff;
+    background-color:#F26900;
+    width: 175px;
+    padding: 7px 10px;
+    text-align: center;
+    margin:16px auto;
+    margin-bottom: 50px;
+}
 
 </style>
