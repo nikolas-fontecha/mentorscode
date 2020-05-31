@@ -46,7 +46,7 @@ var controller = {
         const body = {
             nombre:       req.body.nombre,
             email:        req.body.email,
-            misfavoritos: req.body.favoritos
+            misfavoritos: []
         };
 
         body.contrasena =  bcrypt.hashSync(req.body.contrasena, salt);

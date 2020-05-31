@@ -159,6 +159,33 @@ var controller = {
         return res.status(400).json({
             mensaje: 'No hay videos de ese mentor'
         });
+    },
+
+    obtenerPorCategoria: async(req, res) => {
+        const categoria = req.params.categoria;
+
+        try{
+            const traerVideo = await video.find({ categoria: categoria });
+        
+            if(traerVideo){
+    
+                return res.status(200).json(traerVideo);
+    
+            }
+
+            return res.status(400).json({
+                mensaje: 'No hay videos sobre esa categoria'
+            });
+
+        }catch(error){
+            return res.status(500).json({
+                mensaje: 'Error del servidor'
+            });
+        }
+        
+
+        
+
     }
 }
 
