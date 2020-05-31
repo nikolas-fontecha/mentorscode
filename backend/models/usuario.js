@@ -7,10 +7,11 @@ const usuarioSchema = new Schema({
     email:        {type: String, required: true},
     contrasena:   {type: String, required: true},
     misfavoritos: {type: Array},
-    mentor:       {type: Boolean, default: false}
+    mentor:       {type: Boolean, default: false},
+    fecha:        {type: Date, default: Date.now}
 });
 
-usuarioSchema.methods.toJSON = fucntion(){
+usuarioSchema.methods.toJSON = function(){
     var obj = this.toObject();
     delete obj.contrasena;
     return obj;
