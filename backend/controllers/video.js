@@ -11,6 +11,7 @@ var controller = {
             categoria:    req.body.categoria,
             titulo:       req.body.titulo,
             descripcion:  req.body.descripcion,
+            comodin:      req.body.comodin,
             mentor:       req.body.mentor
         }
 
@@ -162,7 +163,14 @@ var controller = {
     },
 
     obtenerPorCategoria: async(req, res) => {
+
         const categoria = req.params.categoria;
+
+        if(categoria == "comodin"){
+            const videosDB = await video.find();
+
+            return res.status(200).json(videosDB);
+        }
 
         try{
             const traerVideo = await video.find({ categoria: categoria });

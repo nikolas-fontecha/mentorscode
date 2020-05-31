@@ -16,6 +16,7 @@ const videoSchema = new Schema({
     categoria:    {type: Array},
     titulo:       {type: String, required: true},
     descripcion:  {type: String},
+    comodin:      {type: String, default: 'comodin'},
     mentor: {type: String}
 });
 
