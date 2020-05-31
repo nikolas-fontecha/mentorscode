@@ -60,10 +60,10 @@
 }
 
 .container{
-    width: 100.5%;
+    width: 100%;
     height: 660px;
     position: relative;
-    margin-left:-8px;
+    
 }
 
 .container img{
